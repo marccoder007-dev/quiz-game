@@ -77,6 +77,10 @@ h2 {
   font-weight: 600;
 }
 
+.quiz-question {
+  text-align: left;
+}
+
 .quiz-info {
   display: flex;
   justify-content: space-between;
