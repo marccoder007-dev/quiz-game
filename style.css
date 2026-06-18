@@ -10,24 +10,31 @@
 }
 
 body {
-  background-color: #f3f3f6;
-  font-family: sans-serif, serif;
+  font-family: "Robotto", sans-serif;
+  background-color: #f4f6f8;
   min-height: 100vh;
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
   padding: 1rem;
+  font-size: 0.9rem;
   color: var(--text-color);
 }
 
 .app-container {
   background-color: white;
-  padding: 2rem;
-  border-radius: 1.5rem;
-  box-shadow: 0 2px 30px rgba(0, 0, 0, 0.1);
   width: 100%;
   max-width: 600px;
-  font-size: 1.2rem;
+  padding: 0.8rem;
+  box-shadow: 2px 1px 20px rgba(125, 123, 123, 0.2);
+  border-radius: 10px;
+}
+
+h1 {
+  font-size: 2rem;
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+  text-align: center;
 }
 
 .screen {
@@ -38,145 +45,136 @@ body {
   display: block;
 }
 
-#start-screen {
-  text-align: center;
-}
-
-#start-screen h1 {
-  color: var(--primary-color);
-  margin-bottom: 1.3rem;
-}
-
 #start-screen p {
-  margin-bottom: 1.3rem;
-  font-size: 1.2rem;
+  text-align: center;
+  font-size: 1rem;
 }
 
 #start-btn,
 #restart-btn {
   border: none;
-  padding: 0.89rem 1rem;
   background-color: var(--primary-color);
   color: white;
-  font-size: 1.3rem;
-  border-radius: 10px;
+  padding: 0.6rem 1.2rem;
+  font-size: 1.2rem;
+  display: block;
+  margin: 0 auto;
   font-weight: 700;
+  margin-top: 2rem;
+  border-radius: 5px;
   cursor: pointer;
   transition: all 0.2s ease;
 }
 
 #start-btn:hover,
 #restart-btn:hover {
-  background-color: #b03a0e;
   transform: translateY(-2px);
 }
 
-h2 {
-  text-align: center;
-  margin-bottom: 1.4rem;
-  font-weight: 600;
-}
-
 .quiz-question {
-  text-align: left;
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+  align-items: left;
 }
 
 .quiz-info {
   display: flex;
   justify-content: space-between;
+  font-size: 1rem;
   margin-bottom: 2rem;
+  color: #022003;
 }
 
-/* ANSWERS */
 .answers-container {
-  padding: 1rem;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 15px;
 }
 
 .answer-btn {
-  padding: 1em;
-  font-size: 1.2rem;
-  border-radius: 10px;
-  background-color: #f46430;
-  cursor: pointer;
-  transition: all 0.2s ease;
-  border: none;
+  padding: 0.7rem 1rem;
   text-align: left;
-  color: white;
+  border: 1px solid white;
+  font-size: 1rem;
+  line-height: 1.4;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: #f4a6a6;
+  color: black;
+  font-weight: 500;
+  transition: all 0.2s;
 }
 
 .answer-btn:hover {
-  background-color: #e27b56;
+  background-color: #f1a589;
 }
+
 .answer-btn.correct {
-  border: 1px solid #cff7cf;
-  background-color: #bdf4ae;
-  color: #21ca48;
+  background-color: rgb(158, 240, 158);
+  color: rgb(12, 104, 12);
+  border-color: rgb(180, 245, 180);
+  font-weight: 700;
 }
 
 .answer-btn.incorrect {
-  border: 1px solid #f7c3b6;
-  background-color: #efbab1;
-  color: #df553d;
-}
-
-#result-screen h2 {
-  color: var(--primary-color);
-  font-size: 2.5rem;
-}
-
-.result-info {
-  padding: 1rem;
-  text-align: center;
-  background-color: #f7bba5;
-  border-radius: 5px;
-  font-size: 1.3rem;
-  margin-bottom: 2rem;
+  background-color: rgba(255, 0, 0, 0.2);
+  color: rgb(245, 4, 4);
+  border-color: rgb(243, 124, 124);
   font-weight: 600;
 }
 
-.result-message {
+#result-screen h2 {
+  text-align: center;
+  margin-bottom: 1rem;
   color: var(--primary-color);
-  margin-top: 1rem;
-  font-size: 2rem;
-}
-#restart-btn {
-  display: block;
-  margin: 0 auto;
+  font-size: 1.8rem;
+  font-weight: 700;
 }
 
-.progess-container {
-  height: 10px;
+.result-info {
+  background-color: #e5a88f;
+  padding: 0.8rem 2rem;
   border-radius: 5px;
-  background-color: #f8e6e0;
-  margin-top: 2rem;
-  overflow: hidden;
+  color: black;
+  font-size: 1rem;
+  text-align: center;
 }
 
-.progress-bar {
-  width: 1%;
-  height: 100%;
-  background-color: var(--primary-color);
+.result-message {
+  margin-top: 10px;
+  color: var(--primary-color);
+  font-weight: 800;
+  font-size: 1.2rem;
 }
 
-@media (max-width: 500px) {
-  h2 {
-    font-size: 1.5rm;
+@media (min-width: 512px) {
+  body {
+    font-size: 1rem;
+    padding: 1.5rem;
+  }
+
+  #start-screen p {
+    font-size: 1.2rem;
   }
 
   .quiz-question {
-    font-size: 1.4rem;
+    font-size: 1.3rem;
   }
 
-  p {
-    font-size: 1rem;
-  }
-
-  #start-btn,
-  #restart-btn {
-    padding: 0.75rem;
+  .quiz-info {
     font-size: 1.1rem;
+  }
+
+  .answer-btn {
+    padding: 0.9 1.1rem;
+    font-size: 1.1rem;
+  }
+
+  #result-screen p {
+    font-size: 1.2rem;
+  }
+
+  #result-screen .result-message {
+    font-size: 1.8rem;
   }
 }
